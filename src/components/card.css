@@ -1,10 +1,43 @@
 :root{
     --fire: #e63946;
     --water: #0077b6;
-    --normal:#fefae0;
-    --fly: #dda15e;
+    --normal:#f7de40;
+    --flying: #dda15e;
     --poison: #8338ec;
     --bug: #06d6a0;
+    --grass: #2d6a4f;
+}
+
+.fire{
+    background-color: var(--fire);
+}
+
+.water{
+    background-color: var(--water);
+    
+}
+
+.normal{
+    background-color: var(--normal);
+
+}
+
+.flying{
+    background-color: var(--flying);
+
+}
+.poison{
+    background-color: var(--poison);
+
+}
+
+.bug{
+    background-color: var(--bug);
+
+}
+
+.grass{
+    background-color: var(--grass);
 }
 
 .card-container{
@@ -25,6 +58,7 @@
     align-items: center;
     background-color: #dbdada;
     border-radius: 1rem;
+    padding-bottom: 1rem;
 }
 
 .card img{
@@ -42,4 +76,12 @@
     align-items: center;
     justify-content: space-around;
     list-style: none;
+}
+
+.card li{
+    border: 2px solid rgb(238, 238, 238);
+    border-radius: .3rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    color: white;
 }
