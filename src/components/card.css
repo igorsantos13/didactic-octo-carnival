@@ -85,3 +85,11 @@
     padding-left: 1rem;
     color: white;
 }
+
+a{
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: black;
+}

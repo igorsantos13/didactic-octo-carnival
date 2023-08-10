@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Outlet, Link } from "react-router-dom";
 import "./card.css";
 
 function Card(props) {
@@ -25,11 +26,14 @@ function Card(props) {
     }
   };
 
+  
+
   return (
     <>
-      <div className="card-container">
+      <div className="card-container" >
         {pokemonList?.map((pokemon) => (
-          <div className="card" key={pokemon.data.id}>
+          <Link to={`/${pokemon.data.name}`}  key={pokemon.data.id}>
+          <div className="card" key={pokemon.data.id} >
             <img
               key={pokemon.data.id}
               src={pokemon.data?.sprites?.front_default}
@@ -58,6 +62,7 @@ function Card(props) {
               ))}
             </ul>
           </div>
+          </Link>
         ))}
       </div>
     </>
