@@ -33,7 +33,7 @@ function Card(props) {
       <div className="card-container">
         {pokemonList?.map((pokemon) => (
           <Link
-            to={`/${pokemon.data.name}`}
+            to={`/pokedex/${pokemon.data.name}`}
             onClick={() => setHasInfo(true)}
             key={pokemon.data.id}
           >
