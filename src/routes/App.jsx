@@ -24,8 +24,8 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={pokemons && <Card pokemon={pokemons} />} />
-      <Route path="/pokedex:pokemonName" element={<PokemonInfo />} />
+      <Route path="/pokedex/" element={pokemons && <Card pokemon={pokemons} />} />
+      <Route path="/pokedex/:pokemonName" element={<PokemonInfo />} />
     </Routes>
   );
 }
