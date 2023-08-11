@@ -1,39 +1,78 @@
-import React, { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import { useLocation, useParams } from "react-router-dom";
+import "../components/pokemonInfo.css";
 
 function PokemonInfo() {
-  const [pokemonStats, setPokemonStats] = useState([])
-
+  const [pokemonDetails, setPokemonDetails] = useState([]);
   const { pokemonName } = useParams();
+  let location = useLocation();
+  console.log(location);
 
-  console.log(pokemonName)
-  // const getPokemonData = (pokemonName) => {
-  //   fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
-  //   .then(res => res.json())
-  //   .then(data => setPokemonStats(data))
-  // }
+  const getPokemonData = (pokemonName) => {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+      .then((res) => res.json())
+      .then((data) => setPokemonDetails(data));
+  };
 
-  // useEffect(() => {
-  //   getPokemonData()
-  // }, [])
+  useEffect(() => {
+    getPokemonData(pokemonName);
+  }, []);
+
   return (
-    <div className="card-container">
-      <h1>TESTE</h1>
-      {/* <div className="card">
-      <img src={pokemon.sprites?.front_default} alt={pokemon.name} />
-        <b>N: {pokemon.id}</b>
-        <h2>{pokemon.name}</h2>
-        <span>Types:</span>
-        <ul>
-        {pokemon.types?.map(types => (
-                  <>
-                  <li>{types.type.name}</li>
-                  </>
-                ) )}
-        </ul>
-      </div> */}
-    </div>
-  )
-}
+    <div className="pokemon-info-container">
+      <div className="main">
+        <b>
+          N:{" "}
+          {`${
+            pokemonDetails.id < 10
+              ? `#00${pokemonDetails.id}`
+              : `#0${pokemonDetails.id}`
+          }`}
+        </b>
+        <img
+          src={pokemonDetails.sprites?.front_default}
+          alt={pokemonDetails.name}
+        />
+        <h2>{pokemonDetails.name}</h2>
+      </div>
+      <div className="info">
+        <div className="stats">
+          <span>Stats:</span>
+          <ul>
+            {pokemonDetails.stats?.map((stat) => (
+              <>
+                <li>
+                  {stat.stat.name.charAt(0).toUpperCase() +
+                    stat.stat.name.slice(1)}
+                </li>
+                <b>{stat.base_stat}</b>
+              </>
+            ))}
+          </ul>
+        </div>
 
-export default PokemonInfo
+        <div className="ability">
+          <span>Abilities:</span>
+          <ul>
+            {pokemonDetails.abilities?.map((abilitiy) => (
+              <>
+                <li>{abilitiy.ability.name}</li>
+              </>
+            ))}
+          </ul>
+        </div>
+
+        <div className="other">
+          <span>
+            Weight: <b>{pokemonDetails.weight / 10}Kg</b>
+          </span>
+          <br />
+          <span>
+            Height: <b>{pokemonDetails.height / 10}M</b>
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+export default PokemonInfo;
