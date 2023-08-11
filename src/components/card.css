@@ -1,87 +1,96 @@
-:root{
-    --fire: #e63946;
-    --water: #0077b6;
-    --normal:#f7de40;
-    --flying: #dda15e;
-    --poison: #8338ec;
-    --bug: #06d6a0;
-    --grass: #2d6a4f;
+:root {
+  --fire: #e63946;
+  --water: #0077b6;
+  --normal: #f7de40;
+  --flying: #dda15e;
+  --poison: #8338ec;
+  --bug: #06d6a0;
+  --grass: #2d6a4f;
 }
 
-.fire{
-    background-color: var(--fire);
+.fire {
+  background-color: var(--fire);
 }
 
-.water{
-    background-color: var(--water);
-    
+.water {
+  background-color: var(--water);
 }
 
-.normal{
-    background-color: var(--normal);
-
+.normal {
+  background-color: var(--normal);
 }
 
-.flying{
-    background-color: var(--flying);
-
+.flying {
+  background-color: var(--flying);
 }
-.poison{
-    background-color: var(--poison);
-
+.poison {
+  background-color: var(--poison);
 }
 
-.bug{
-    background-color: var(--bug);
-
+.bug {
+  background-color: var(--bug);
 }
 
-.grass{
-    background-color: var(--grass);
+.grass {
+  background-color: var(--grass);
 }
 
-.card-container{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;
-    /* display: flex;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  /* display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center; */
 }
 
-.card{
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #dbdada;
-    border-radius: 1rem;
-    padding-bottom: 1rem;
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #dbdada;
+  border-radius: 1rem;
+  padding-bottom: 1rem;
 }
 
-.card img{
-    width: 100%;
-    height: auto;
-    
-    /* background-color: rgb(240, 240, 240); */
-    border-radius: 1rem;
+.card img {
+  width: 100%;
+  height: auto;
+
+  /* background-color: rgb(240, 240, 240); */
+  border-radius: 1rem;
 }
 
-.card ul{
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    list-style: none;
+.card ul {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
 }
 
-.card li{
-    border: 2px solid rgb(238, 238, 238);
-    border-radius: .3rem;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    color: white;
+.card li {
+  border: 2px solid rgb(238, 238, 238);
+  border-radius: 0.3rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  color: black;
 }
